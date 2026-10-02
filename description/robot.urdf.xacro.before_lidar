@@ -74,8 +74,6 @@
             x="0.6"
             y="0.4"
             z="0.15"/>
-
-
     </link>
 
     <joint name="base_to_chassis" type="fixed">
@@ -105,40 +103,6 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </collision>
 </link>
-
-
-    <gazebo reference="laser_link">
-        <sensor name="lidar_sensor" type="gpu_lidar">
-            <always_on>true</always_on>
-            <visualize>true</visualize>
-            <update_rate>10</update_rate>
-            <topic>scan</topic>
-            <gz_frame_id>laser_link</gz_frame_id>
-
-            <lidar>
-                <scan>
-                    <horizontal>
-                        <samples>360</samples>
-                        <resolution>1</resolution>
-                        <min_angle>-3.14159</min_angle>
-                        <max_angle>3.14159</max_angle>
-                    </horizontal>
-                    <vertical>
-                        <samples>1</samples>
-                        <resolution>1</resolution>
-                        <min_angle>0</min_angle>
-                        <max_angle>0</max_angle>
-                    </vertical>
-                </scan>
-
-                <range>
-                    <min>0.12</min>
-                    <max>10.0</max>
-                    <resolution>0.01</resolution>
-                </range>
-            </lidar>
-        </sensor>
-    </gazebo>
 
     <joint name="base_to_laser" type="fixed">
         <parent link="chassis"/>
